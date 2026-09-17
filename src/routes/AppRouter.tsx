@@ -4,6 +4,10 @@ import HomePage from "../pages/HomePage";
 import NotFound from "../pages/NotFound";
 import AboutPage from "../pages/AboutPage";
 import ServicePage from "../pages/ServicePage";
+import MenuPage from "../pages/MenuPage";
+import ContactPage from "../pages/ContactPage";
+import ReservationPage from "../pages/ReservationPage";
+import TestimonialPage from "../pages/TestimonialPage";
 
 const routers = createBrowserRouter([
     {
@@ -21,6 +25,22 @@ const routers = createBrowserRouter([
             {
                 path: "service",
                 element:<ServicePage/>
+            },
+            {
+                path: "Menu",
+                element:<MenuPage/>
+            },
+            {
+                path: "contact",
+                element:<ContactPage/>
+            },
+            {
+                path: "reservation",
+                element:<ReservationPage/>
+            },
+            {
+                path: "testimonial",
+                element:<TestimonialPage/>
             },
             {
                 path: "*",
