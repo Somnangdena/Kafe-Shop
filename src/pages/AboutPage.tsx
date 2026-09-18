@@ -1,7 +1,11 @@
+import Hero from "../components/Hero/Hero";
+
 
 function AboutPage() {
   return (
-    <div>AboutPage</div>
+    <main>
+      <Hero title="About Us"/>
+    </main>
   )
 }
 

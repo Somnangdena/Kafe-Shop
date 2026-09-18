@@ -68,16 +68,21 @@ const NavBar = () => {
     setIsDrop(!isDrop);
   }
 
+  function closeAll(){
+    setIsDrop(false);
+    setIsOpen(!isOpen)
+  }
+
   return (
     <header className="bg-dark relative">
       <div className="p-4">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <h2 className="text-secondary font-bold text-xl leading-4">Kafe</h2>
+            <h2 className="text-secondary font-bold text-3xl leading-4">Kafe</h2>
           </Link>
           {/* Desktop */}
           <nav className="hidden md:block flex-1">
-            <ul className="flex items-center justify-end gap-2 pr-5">
+            <ul className="flex items-center justify-end gap-2">
               {navLink.map((nav) => (
                 <li
                   key={nav.id}
@@ -102,7 +107,7 @@ const NavBar = () => {
                       </span>
                       {isDrop && (
                         <div
-                          className={`absolute top-full left-0 pt-4 ${!isDrop ? "hidden" : "block"}`}>
+                          className={`absolute top-full left-0 pt-4 z-10 ${!isDrop ? "hidden" : "block"}`}>
                           <ul className="w-40 bg-dark">
                             {nav.children.map((child) => (
                               <li key={child.name}>
@@ -157,8 +162,8 @@ const NavBar = () => {
       <MobileNav
         MenuBar={navLink}
         isdrop= {isDrop}
-        close={() => setIsOpen(!isOpen)}
-        drop={() => setIsDrop(!isDrop)}
+        close={closeAll}
+        drop={dropDown}
         open={isOpen}
       />
     </header>

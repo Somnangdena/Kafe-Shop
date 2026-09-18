@@ -1,7 +1,10 @@
+import Hero from "../components/Hero/Hero";
 
 function ContactPage() {
   return (
-    <div>ContactPage</div>
+    <div>
+      <Hero title="Contact"/>
+    </div>
   )
 }
 
