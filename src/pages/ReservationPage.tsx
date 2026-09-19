@@ -1,7 +1,10 @@
+import Hero from "../components/UI/Hero";
 
 function ReservationPage() {
   return (
-    <div>ReservationPage</div>
+    <main>
+      <Hero title="Reservation"/>
+    </main>
   )
 }
 

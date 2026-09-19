@@ -1,7 +1,12 @@
+import Hero from "../components/UI/Hero";
+import Title from "../components/UI/Title";
 
 function ServicePage() {
   return (
-    <div>ServicePage</div>
+    <main>
+      <Hero title="Service"/>
+      <Title title="Our Service" desc="Fresh & Organic Beans" />
+    </main>
   )
 }
 

@@ -15,9 +15,9 @@ const Hero = ({ title }: { title: string }) => {
         <div
           className="w-full h-3.75 absolute left-0 z-1"
           style={{ background: `url(${overlayBottom})`, bottom: "-1px" }}></div>
-        <div className="container mx-auto w-full min-h-100 flex flex-col justify-center items-center text-secondary">
-          <h2 className="text-4xl font-bold uppercase">{title}</h2>
-          <p className="text-sm mt-5 capitalize">
+        <div className="container mx-auto w-full min-h-92.5 flex flex-col justify-center items-center text-secondary py-5">
+          <h2 className="text-2xl md:text-4xl font-bold text-center uppercase">{title}</h2>
+          <p className="text-sm text-center font-sans mt-4 capitalize">
             Home / {location.pathname.replace("/", "")}
           </p>
         </div>

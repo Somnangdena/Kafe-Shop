@@ -1,10 +1,12 @@
-import Hero from "../components/Hero/Hero";
+import Hero from "../components/UI/Hero";
+import Title from "../components/UI/Title";
 
 function ContactPage() {
   return (
-    <div>
+    <main>
       <Hero title="Contact"/>
-    </div>
+      <Title title="Contact" desc="Feel Free To Contact" />
+    </main>
   )
 }
 

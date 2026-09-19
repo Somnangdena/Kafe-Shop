@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import { LuMenu, LuX } from "react-icons/lu";
@@ -60,25 +60,35 @@ const navLink: NavItem[] = [
 ];
 
 const NavBar = () => {
+  const [isActive, setIsActive] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isDrop, setIsDrop] = useState<boolean>(false);
   const location = useLocation();
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
+    });
+  }, [isActive]);
 
   function dropDown() {
     setIsDrop(!isDrop);
   }
 
-  function closeAll(){
+  function closeAll() {
     setIsDrop(false);
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   return (
-    <header className="bg-dark relative">
+    <header
+      className={`${isActive ? "bg-dark" : "bg-transparent"} fixed top-0 left-0 right-0 z-10 transition ease-in`}>
       <div className="p-4">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <h2 className="text-secondary font-bold text-3xl leading-4">Kafe</h2>
+            <h2 className="text-secondary font-bold text-3xl leading-4">
+              Kafe
+            </h2>
           </Link>
           {/* Desktop */}
           <nav className="hidden md:block flex-1">
@@ -161,7 +171,7 @@ const NavBar = () => {
       {/* Mobile */}
       <MobileNav
         MenuBar={navLink}
-        isdrop= {isDrop}
+        isdrop={isDrop}
         close={closeAll}
         drop={dropDown}
         open={isOpen}
