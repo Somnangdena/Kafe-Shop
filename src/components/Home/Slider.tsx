@@ -1,8 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
 import slide1 from "../../assets/images/carousel-1.jpg";
 import slide2 from "../../assets/images/carousel-2.jpg";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 interface HeroSlide {
     id: number;
@@ -32,48 +35,51 @@ const slides: HeroSlide[] = [
 
 const Slider = () => {
   return (
-    <section className="h-96 w-full">
-        <Swiper
-        modules={[Autoplay, Pagination, Navigation, EffectFade]}
-        effect="fade"
+    <section className="relative min-h-150 w-full overflow-hidden">
+      <Swiper
+        modules={[
+          Autoplay,
+          Navigation,
+        ]}
         loop
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
         }}
         navigation
         className="h-full w-full"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div
-              className="relative flex h-full w-full items-center bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                backgroundColor: "rgba(51,33,29,0.7)"
-              }}
-            >
-              {/* Overlay */}
+            <div className="relative h-full w-full py-20">
+              {/* Background */}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/60" />
+
+              {/* Extra brown overlay */}
+              <div className="absolute inset-0 bg-[#33211a]/20" />
 
               {/* Content */}
-              <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-                <div className="max-w-2xl text-white">
-                  <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-                    {slide.title}
-                  </h1>
-
-                  <p className="mt-5 max-w-xl text-base leading-7 text-gray-200 sm:text-lg">
+              <div className="relative z-10 flex h-full items-center justify-center px-6 text-center">
+                <div className="text-white">
+                  <p className="mb-5 text-xl font-medium tracking-wide sm:text-2xl">
                     {slide.desc}
                   </p>
 
-                  <h4
-                    className="mt-8 rounded-lg px-7 py-3.5 font-semibold text-white transition"
-                  >
-                    {slide.since}
-                  </h4>
+                  <h1 className="text-6xl font-black tracking-[0.15em] sm:text-7xl md:text-8xl lg:text-9xl">
+                    {slide.title}
+                  </h1>
+
+                  <p className="mt-5 text-xl font-medium tracking-[0.35em] sm:text-2xl">
+                   {slide.since}
+                  </p>
+
                 </div>
               </div>
             </div>
