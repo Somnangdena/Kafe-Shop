@@ -10,4 +10,11 @@
 
 body{
   background-color: #FFFBF2;
+  
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
 }
