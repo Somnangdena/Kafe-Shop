@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 
 const Booking = () => {
   return (
-    <section className="max-w-4xl m-auto py-10">
+    <section className="max-w-5xl m-auto py-10">
       <div className="relative mx-8">
         <div
           className="w-full h-3.75 absolute left-0 z-1"
@@ -80,25 +80,26 @@ const Booking = () => {
                 id="time"
                 name="time"
               />
-                <select 
+              <select
                 id="person"
+                defaultValue="1"
                 className="w-full border border-primary py-2 px-3 focus:outline-none cursor-pointer">
-                  <option className="bg-accent" selected value="1">
-                    Person 1
-                  </option>
-                  <option className="bg-accent" value="2">
-                    Person 2
-                  </option>
-                  <option className="bg-accent" value="3">
-                    Person 3
-                  </option>
-                  <option className="bg-accent" value="4">
-                    Person 4
-                  </option>
-                </select>
-              <button 
-              onClick={(e) => e.preventDefault()}
-              className="bg-primary py-2 text-accent font-semibold cursor-pointer">
+                <option className="bg-accent" value="1">
+                  Person 1
+                </option>
+                <option className="bg-accent" value="2">
+                  Person 2
+                </option>
+                <option className="bg-accent" value="3">
+                  Person 3
+                </option>
+                <option className="bg-accent" value="4">
+                  Person 4
+                </option>
+              </select>
+              <button
+                onClick={(e) => e.preventDefault()}
+                className="bg-primary py-2 text-accent font-semibold cursor-pointer">
                 Book Now
               </button>
             </form>

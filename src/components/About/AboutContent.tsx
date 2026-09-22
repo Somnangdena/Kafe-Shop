@@ -3,9 +3,9 @@ import about from "../../assets/images/about.png";
 
 const AboutContent = () => {
   return (
-    <section className="max-w-4xl mx-auto pb-10">
+    <section className="max-w-5xl mx-auto pb-10">
       <div className="flex flex-col justify-center items-start px-6 gap-4 lg:flex-row ">
-        <article className="space-y-4 flex-1 px-5 py-8">
+        <article className="space-y-4 flex-1 p-8">
           <h2 className="text-4xl font-bold">Our Story</h2>
           <h5 className="text-xl">
             Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet sed
@@ -25,7 +25,7 @@ const AboutContent = () => {
           src={about} 
           alt="coffee" />
         </div>
-        <article className="space-y-4 flex-1 px-5 py-8">
+        <article className="space-y-4 flex-1 p-8">
           <h2 className="text-4xl font-bold">Our Vision</h2>
           <p className="text-sm">
             Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
