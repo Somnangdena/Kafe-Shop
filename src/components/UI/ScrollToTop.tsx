@@ -20,7 +20,7 @@ const ScrollToTop = () => {
   return (
     <div
       onClick={scrollUp}
-      className={`${isActive ? "fixed" : "hidden"} bg-primary/95 w-10 h-10 flex justify-center items-center bottom-5 right-5 z-10 hover:bg-primary transition-all ease-in cursor-pointer`}>
+      className={`fixed ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"} bg-primary/95 w-10 h-10 flex justify-center items-center bottom-5 right-5 z-10 hover:bg-primary transition-all ease-in cursor-pointer`}>
       <FaAngleDoubleUp className="text-6xl p-4 text-accent" />
     </div>
   );
